@@ -21,10 +21,10 @@ Route::get('/welcome', function () {
     return 'welcome route';
 });
 
-Route::get('/welcome/khris', function () {
-    return 'welcome route khris';
+Route::get('/welcome/{firstname}', function ($firstname) {
+    return 'welcome route '.$firstname;
 });
 
-Route::get('/welcome/khris/pineda', function () {
-    return 'welcome route khris pineda';
+Route::get('/welcome/{firstname}/{lastname}', function ($firstname,$lastname) {
+    return 'welcome route '.$firstname.' '.$lastname;
 });
