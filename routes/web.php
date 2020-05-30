@@ -21,10 +21,20 @@ Route::get('/welcome', function () {
     return 'welcome route';
 });
 
-Route::get('/welcome/{firstname}', function ($firstname) {
-    return 'welcome route '.$firstname;
-});
+Route::get('/blog', function () {
+    return view('blog');
+})->name('noticias');
 
-Route::get('/welcome/{firstname}/{lastname}', function ($firstname,$lastname) {
+route::view('galeria','fotos', [ 'number' => 125])->name('foto');
+
+Route::get('/welcome/{firstname?}', function ($firstname = 'Fulano') {
+    return 'welcome route '.$firstname;
+})->where('name', '[A-Za-z]+');
+
+Route::get('/welcome/{firstname?}/{lastname?}', function ($firstname = 'Fulano',$lastname = 'sin appellido') {
     return 'welcome route '.$firstname.' '.$lastname;
-});
+})->where(['firstname' => '[a-z]+', 'lastname' => '[a-z]+']);
+
+Route::get('/welcome/{firstname?}/{lastname?}/{yearsold?}', function ($firstname = 'Fulano',$lastname = 'sin appellido',$yearsold = 0) {
+    return 'welcome route '.$firstname.' '.$lastname.' '.$yearsold;
+})->where(['firstname' => '[a-z]+', 'lastname' => '[a-z]+','yearsold' => '[0-9]+']);
