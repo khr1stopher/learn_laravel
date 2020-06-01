@@ -13,23 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PagesController@inicio');
 
-Route::get('/welcome', function () {
-    return 'welcome route';
-});
-
-Route::get('/blog', function () {
-    return view('blog');
-})->name('noticias');
+Route::get('/welcome',"PagesController@welcome"); 
+Route::get('/blog', 'PagesController@blog')->name('noticias');
 
 route::view('galeria','fotos', [ 'number' => 125])->name('foto');
 
 Route::get('/welcome/{firstname?}', function ($firstname = 'Fulano') {
     return 'welcome route '.$firstname;
 })->where('name', '[A-Za-z]+');
+
+Route::get('/nosotros/{nombre?}','PagesController@Nosotros')->name('nosotros');
 
 Route::get('/welcome/{firstname?}/{lastname?}', function ($firstname = 'Fulano',$lastname = 'sin appellido') {
     return 'welcome route '.$firstname.' '.$lastname;
