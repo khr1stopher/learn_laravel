@@ -14,11 +14,12 @@
 
     <h1>
       <ul>
+        <li><a href=" {{ route('inicio')}} "> inicio </a></li>
         <li><a href=" {{ route('foto')}} "> foto </a></li>
         <li><a href=" {{ route('noticias')}} "> blog </a></li>
       </ul>
     </h1>
-    <div class="container">
+    <div class="container my-4">
       @yield('seccion')
     </div>
     <h1>Footer</h1>

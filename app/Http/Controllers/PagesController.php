@@ -12,6 +12,16 @@ class PagesController extends Controller
     	return view('welcome', compact('notas'));
     }
 
+    public function detalle($id)
+    {
+        // $nota = App\Nota::find($id); si no existe tirara un error
+
+        $nota = App\Nota::findOrFail($id);
+        // sino existe redirije al 404
+
+        return view('notas.detalle', compact('nota'));
+    }
+
     public function welcome()
     {
     	return 'welcome route';
