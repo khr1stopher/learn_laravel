@@ -12,10 +12,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// POST
 
+Route::post('/', 'PagesController@crear')->name('notas.crear');
+
+// GET
 Route::get('/', 'PagesController@inicio')->name('inicio');
 
-Route::get('/{id}', 'PagesController@detalle')->name('notas.detalle');
+Route::get('/detalle/{id}', 'PagesController@detalle')->name('notas.detalle');
 
 Route::get('/welcome',"PagesController@welcome"); 
 Route::get('/blog', 'PagesController@blog')->name('noticias');

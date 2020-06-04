@@ -4,6 +4,17 @@
 <div class="display-1">
     Notas
 </div>
+
+    <form action="{{ route('notas.crear') }}" method="POST">
+        <h4 class="text-center">add note</h4>
+        @csrf
+        <input type="text" name="nombre" placeholder="titulo" class="form-control mb-2">
+        <input type="text" name="description" placeholder="description" class="form-control mb-2">
+        <button type="submit" class="btn btn-primary my-auto align-center btn-block block">  
+            add
+        </button>
+    </form>
+
 <table class="table">
     <thead>
         <tr>

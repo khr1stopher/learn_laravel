@@ -7,6 +7,22 @@ use App;
 
 class PagesController extends Controller
 {
+    // POST
+
+    public function crear(Request $request)
+    {
+        // return $request->all();
+
+        $newNote = new App\Nota;
+        $newNote->nombre = $request->nombre;
+        $newNote->description = $request->description;
+
+        $newNote->save();
+        
+        return back();
+    }
+
+    // GET
     public function inicio(){
         $notas = App\Nota::all();
     	return view('welcome', compact('notas'));

@@ -14,9 +14,9 @@
 
     <h1>
       <ul>
-        <li><a href=" {{ route('inicio')}} "> inicio </a></li>
-        <li><a href=" {{ route('foto')}} "> foto </a></li>
-        <li><a href=" {{ route('noticias')}} "> blog </a></li>
+        <a href=" {{ route('inicio')}} " class="btn btn-primary"> inicio </a>
+        <a href=" {{ route('foto')}} " class="btn btn-primary"> foto </a>
+        <a href=" {{ route('noticias')}} " class="btn btn-primary"> blog </a>
       </ul>
     </h1>
     <div class="container my-4">
