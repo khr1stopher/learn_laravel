@@ -4,7 +4,12 @@
 <div class="display-1">
     Notas
 </div>
-
+        
+    @if(session('mensaje'))
+    <div class="alert alert-success">   
+        {{ session('mensaje') }}
+    </div>
+    @endif
     <form action="{{ route('notas.crear') }}" method="POST">
         <h4 class="text-center">add note</h4>
         @csrf

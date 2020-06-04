@@ -18,8 +18,8 @@ class PagesController extends Controller
         $newNote->description = $request->description;
 
         $newNote->save();
-        
-        return back();
+
+        return back()->with('mensaje', '!Add Note');
     }
 
     // GET
